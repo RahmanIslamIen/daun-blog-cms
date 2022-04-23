@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        
 
             @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
@@ -37,11 +37,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="">Tulis konten</label>
-                            <textarea type="text" name="konten" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="">Slug</label>
-                            <input type="text" name="slug" class="form-control">
+                            <textarea id="editor" type="text" name="konten" class="form-control"></textarea>
                         </div>
                         <div class="form-group mb-3">
                             <button type="submit" class="btn btn-primary">Posting Artikel</button>
@@ -51,8 +47,17 @@
 
                 </div>
             </div>
-        </div>
+        
     </div>
 </div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
 
 @endsection

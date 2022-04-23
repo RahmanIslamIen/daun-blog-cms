@@ -21,8 +21,15 @@ class PostController extends Controller
         $postingan->tanggal = $request->input('tanggal');
         $postingan->excerpt = $request->input('excerpt');
         $postingan->konten = $request->input('konten');
-        $postingan->slug = $request->input('slug');
+        
         $postingan->save();
         return redirect()->back()->with('status','Berhasil Diposting');
+    }
+
+    public function tampil_post($id)
+    {
+        $posts = Post::all()->where('id', $id);
+        
+        return view('post', compact('posts'));
     }
 }

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('excerpt');
             $table->text('konten');
-            $table->text('slug');
             $table->timestamps();
         });
     }

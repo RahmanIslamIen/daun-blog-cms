@@ -15,6 +15,7 @@ use App\Models\Post;
 |
 */
 
+//halaman home
 Route::get('/', function () {
     $posts = Post::all();
     return view('all-post', compact('posts'));
@@ -22,11 +23,15 @@ Route::get('/', function () {
 
 //admin post
 Route::get('/admin-post', function () {
-    return view('admin-post');
+    $posts = Post::all();
+    return view('admin-post', compact('posts'));
 });
 
 Route::get('tambah-post', [PostController::class, 'posting']);
 Route::post('tambah-post', [PostController::class, 'buatPosting']);
+
+//blog post
+Route::get('post/{id}', [PostController::class, 'tampil_post']);
 
 Auth::routes();
 
