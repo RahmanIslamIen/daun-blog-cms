@@ -14,14 +14,14 @@
 				<p>{{ $item->penulis }}</p>
 				<h5>{{ $item->tanggal }}</h5>
 				<p class="card-text">{{ $item->excerpt }}</p>
-				<a class="btn btn-outline-success">
-					<i data-feather="edit"></i>Ubah
+				<a class="btn btn-outline-success" href="{{ url('ubah-post/'.$item->id) }}">
+					<i data-feather="edit"></i>Ubah Postingan
 				</a>
-		    	<a class="btn btn-outline-danger">
-		    		<i data-feather="trash-2"></i>Hapus
+		    	<a class="btn btn-outline-danger" href="{{ url('hapus-postingan/'.$item->id) }}">
+		    		<i data-feather="trash-2"></i>Hapus Postingan
 		    	</a>
 		    	<a class="btn btn-outline-primary" href="/post/{{ $item->id }}">
-		    		<i data-feather="eye"></i>Lihat
+		    		<i data-feather="eye"></i>Lihat Postingan
 		    	</a>
 			</div>
 		</div>

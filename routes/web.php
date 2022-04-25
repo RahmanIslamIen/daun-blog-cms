@@ -27,8 +27,16 @@ Route::get('/admin-post', function () {
     return view('admin-post', compact('posts'));
 });
 
+//tambah post
 Route::get('tambah-post', [PostController::class, 'posting']);
 Route::post('tambah-post', [PostController::class, 'buatPosting']);
+
+//ubah postingan
+Route::get('ubah-post/{id}', [PostController::class, 'update_data']);
+Route::put('ubah-post/{id}', [PostController::class, 'update']);
+
+//hapus postingan
+Route::delete('hapus-postingan/{id}', [PostController::class, 'hapus_postingan']);
 
 //blog post
 Route::get('post/{id}', [PostController::class, 'tampil_post']);

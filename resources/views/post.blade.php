@@ -9,10 +9,7 @@
 			<h3>{{ $item->title }}</h3>
 			<p>{{ $item->penulis }}</p>
 			<h5>{{ $item->tanggal }}</h5>
-			<?php 
-				$kontenFull = $item->konten;
-				echo $kontenFull;
-			?>
+			{!! $item->konten !!}
 		</div>
 	</div>
 @endforeach

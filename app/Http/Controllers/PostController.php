@@ -32,4 +32,30 @@ class PostController extends Controller
         
         return view('post', compact('posts'));
     }
+
+    public function update_data($id)
+    {
+        $postingan = Post::find($id);
+        return view('ubah-post', compact('postingan'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $postingan = Post::find($id);
+        $postingan->title = $request->input('title');
+        $postingan->penulis = $request->input('penulis');
+        $postingan->tanggal = $request->input('tanggal');
+        $postingan->excerpt = $request->input('excerpt');
+        $postingan->konten = $request->input('konten');
+
+        $postingan->update();
+        return redirect()->back()->with('status','berhasil update artikel');
+    }
+
+    public function hapus_postingan($id)
+    {
+        $postingan = Post::find($id);
+        $postingan->delete();
+        return redirect()->back()->with('status','Berhasil menghapus postingan');
+    }
 }
