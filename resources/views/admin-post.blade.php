@@ -1,9 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="float: right; margin: 20px;">
-		<a href="{{ url('tambah-post') }}" class="btn btn-outline-success">Tambah Postingan</a>
-</div>	
+
+<style type="text/css">
+	.tiapTombol {
+		margin: 10px;
+	}
+</style>
+
+<a href="{{ url('tambah-post') }}" class="btn btn-outline-success tiapTombol">
+	<i data-feather="file-plus"></i> Tambah Postingan
+</a>
+<a href="#" class="btn btn-outline-warning tiapTombol">
+	<i data-feather="settings"></i> Opsi Blog
+</a>	
+<a href="#" class="btn btn-outline-info tiapTombol">
+	<i data-feather="bar-chart"></i> Linmasa Pengunjung
+</a>	
+<a href="#" class="btn btn-outline-secondary tiapTombol">
+	<i data-feather="dollar-sign"></i> Penayangan Iklan
+</a>		
 
 <div class="container">
 	
@@ -14,15 +30,18 @@
 				<p>{{ $item->penulis }}</p>
 				<h5>{{ $item->tanggal }}</h5>
 				<p class="card-text">{{ $item->excerpt }}</p>
-				<a class="btn btn-outline-success" href="{{ url('ubah-post/'.$item->id) }}">
-					<i data-feather="edit"></i>Ubah Postingan
-				</a>
+				<div style="float: right;">
+					<a class="btn btn-outline-success" href="{{ url('ubah-post/'.$item->id) }}">
+						<i data-feather="edit"></i>Ubah Postingan
+					</a>
 		    	<a class="btn btn-outline-danger" href="{{ url('hapus-postingan/'.$item->id) }}">
 		    		<i data-feather="trash-2"></i>Hapus Postingan
 		    	</a>
 		    	<a class="btn btn-outline-primary" href="/post/{{ $item->id }}">
 		    		<i data-feather="eye"></i>Lihat Postingan
 		    	</a>
+				</div>
+				
 			</div>
 		</div>
 	@endforeach

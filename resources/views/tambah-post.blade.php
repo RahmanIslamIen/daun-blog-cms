@@ -4,11 +4,14 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        
 
             @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
             @endif
+
+            <a href="/admin-post" style="margin-bottom: 10px; text-decoration: none;">
+                <i data-feather="chevron-left"></i>Kembali
+            </a>
 
             <div class="card">
                 <div class="card-header">
@@ -32,7 +35,7 @@
                             <input type="date" name="tanggal" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">execrpt</label>
+                            <label for="">Tulisan Tajuk</label>
                             <textarea type="text" name="excerpt" class="form-control"></textarea>
                         </div>
                         <div class="form-group mb-3">
@@ -59,5 +62,8 @@
         } );
 </script>
 
+<script>
+  feather.replace()
+</script>
 
 @endsection
