@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\AdminPass;
 use App\Models\Post;
 
 /*
@@ -22,6 +23,10 @@ Route::get('/', function () {
 });
 
 //admin post
+Route::get('masuk-panel', function () {
+    return view('masuk-panel');
+});
+Route::put('masuk-panel/{pass}', [AdminPass::class, 'masukAdmin']);
 Route::get('/admin-post', function () {
     $posts = Post::all();
     return view('admin-post', compact('posts'));
