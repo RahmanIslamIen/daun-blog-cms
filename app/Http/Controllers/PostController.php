@@ -17,6 +17,7 @@ class PostController extends Controller
         $postingan = new Post;
 
         $postingan->title = $request->input('title');
+        $postingan->kategori = $request->input('kategori');
         $postingan->penulis = $request->input('penulis');
         $postingan->tanggal = $request->input('tanggal');
         $postingan->excerpt = $request->input('excerpt');
@@ -43,6 +44,7 @@ class PostController extends Controller
     {
         $postingan = Post::find($id);
         $postingan->title = $request->input('title');
+        $postingan->kategori = $request->input('kategori');
         $postingan->penulis = $request->input('penulis');
         $postingan->tanggal = $request->input('tanggal');
         $postingan->excerpt = $request->input('excerpt');

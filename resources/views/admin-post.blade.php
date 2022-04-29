@@ -27,6 +27,7 @@
 		<div class="card" style="margin: 10px;">
 			<div class="card-body">
 				<h3 class="card-title">{{ $item->title }}</h3>
+				<span class="badge rounded-pill bg-success">{{ $item->kategori }}</span>
 				<p>{{ $item->penulis }}</p>
 				<h5>{{ $item->tanggal }}</h5>
 				<p class="card-text">{{ $item->excerpt }}</p>
