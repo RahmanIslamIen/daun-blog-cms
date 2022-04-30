@@ -6,7 +6,12 @@
 	.tiapTombol {
 		margin: 10px;
 	}
+	.namaAdmin{
+		margin-left: 20px;
+	}
 </style>
+
+<h1 class="namaAdmin">Nama Admin: {{ Auth::user()->name }}</h1>
 
 <a href="{{ url('tambah-post') }}" class="btn btn-outline-success tiapTombol">
 	<i data-feather="file-plus"></i> Tambah Postingan

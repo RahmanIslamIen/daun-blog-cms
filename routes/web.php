@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Models\AdminPass;
@@ -23,14 +24,7 @@ Route::get('/', function () {
 });
 
 //admin post
-Route::get('masuk-panel', function () {
-    return view('masuk-panel');
-});
-Route::put('masuk-panel/{pass}', [AdminPass::class, 'masukAdmin']);
-Route::get('/admin-post', function () {
-    $posts = Post::all();
-    return view('admin-post', compact('posts'));
-});
+Route::get('admin-post', [AdminPanel::class, 'panelUtama']);
 
 //tambah post
 Route::get('tambah-post', [PostController::class, 'posting']);
