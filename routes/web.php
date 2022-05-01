@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Models\AdminPass;
@@ -27,9 +28,8 @@ Route::get('/', function () {
 Route::get('admin-post', [AdminPanel::class, 'panelUtama']);
 
 //kelola kategori
-Route::get('/kelola-kategori', function(){
-    return view('kelola-kategori');
-});
+Route::get('kelola-kategori', [KategoriController::class, 'semuaKategori']);
+Route::post('kategoribaru', [KategoriController::class, 'simpanKategori']);
 
 //tambah post
 Route::get('tambah-post', [PostController::class, 'posting']);
