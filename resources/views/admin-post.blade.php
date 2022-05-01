@@ -20,10 +20,13 @@
 	<i data-feather="settings"></i> Opsi Blog
 </a>	
 <a href="#" class="btn btn-outline-info tiapTombol">
-	<i data-feather="bar-chart"></i> Linmasa Pengunjung
+	<i data-feather="message-square"></i> Semua Komentar
 </a>	
 <a href="#" class="btn btn-outline-secondary tiapTombol">
 	<i data-feather="dollar-sign"></i> Penayangan Iklan
+</a>		
+<a href="{{ url('/kelola-kategori') }}" class="btn btn-outline-dark tiapTombol">
+	<i data-feather="tag"></i> Kelola Kategori
 </a>		
 
 <div class="container">

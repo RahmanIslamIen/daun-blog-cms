@@ -26,6 +26,11 @@ Route::get('/', function () {
 //admin post
 Route::get('admin-post', [AdminPanel::class, 'panelUtama']);
 
+//kelola kategori
+Route::get('/kelola-kategori', function(){
+    return view('kelola-kategori');
+});
+
 //tambah post
 Route::get('tambah-post', [PostController::class, 'posting']);
 Route::post('tambah-post', [PostController::class, 'buatPosting']);

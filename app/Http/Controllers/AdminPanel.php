@@ -21,6 +21,5 @@ class AdminPanel extends Controller
         }else{
              return redirect('/');
         }
-        
     }
 }
