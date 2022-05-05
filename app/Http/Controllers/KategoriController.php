@@ -20,4 +20,26 @@ class KategoriController extends Controller
         $kategoriBaru->save();
         return redirect()->back()->with('status','Berhasil Menambahkan Kategori Baru');
     }
+
+    public function ubahKategori($id)
+    {
+        $kategori = Kategori::find($id);
+        return view('ubah-kategori', compact('kategori'));
+    }
+
+    public function dataUbahKategori(Request $request, $id)
+    {
+        $kategori = Kategori::find($id);
+        $kategori->nama_kategori = $request->input('nama_kategori');
+
+        $kategori->update();
+        return redirect()->back()->with('status','berhasil mengubah kategori');
+    }
+
+    public function hapusKategori($id)
+    {
+        $kategori = Kategori::find($id);
+        $kategori->delete();
+        return redirect()->back()->with('status','kategori berhasil dihapus');
+    }
 }

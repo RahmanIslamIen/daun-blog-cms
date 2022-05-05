@@ -59,15 +59,15 @@ data-bs-toggle="modal" data-bs-target="#exampleModal">
 				<h3 class="card-title">{{ $kategori->nama_kategori }}</h3>
 				<p>id : {{ $kategori->id }}</p>
 				<div style="float: right;">
-					<a class="btn btn-outline-success" href="#">
+					<a class="btn btn-outline-success" href="{{ url('ubah-kategori/'.$kategori->id) }}">
 						<i data-feather="edit"></i>Ubah
 					</a>
-		    	<a class="btn btn-outline-danger" href="#">
-		    		<i data-feather="trash-2"></i>Hapus
-		    	</a>
-		    	<a class="btn btn-outline-primary" href="#">
-		    		<i data-feather="eye"></i>Lihat
-		    	</a>
+					<a class="btn btn-outline-danger" href="{{ url('hapus-kategori/'.$kategori->id) }}">
+						<i data-feather="trash-2"></i>Hapus
+					</a>
+					<a class="btn btn-outline-primary" href="#">
+						<i data-feather="eye"></i>Lihat
+					</a>
 				</div>
 			</div>
 		</div>

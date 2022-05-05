@@ -30,6 +30,9 @@ Route::get('admin-post', [AdminPanel::class, 'panelUtama']);
 //kelola kategori
 Route::get('kelola-kategori', [KategoriController::class, 'semuaKategori']);
 Route::post('kategoribaru', [KategoriController::class, 'simpanKategori']);
+Route::get('ubah-kategori/{id}', [KategoriController::class, 'ubahKategori']);
+Route::put('ubah-kategori/{id}', [KategoriController::class, 'dataUbahKategori']);
+Route::delete('hapus-kategori/{id}', [StudentController::class, 'hapusKategori']);
 
 //tambah post
 Route::get('tambah-post', [PostController::class, 'posting']);
