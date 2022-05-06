@@ -64,5 +64,19 @@ class PostController extends Controller
     }
 
     //fungsi komentar pada postingan
+    public function membuatKomentar(Request $request)
+    {
+        $komentarBaru = new Komentar;
+
+        $komentarBaru->id_postingan = $request->input('id_postingan');
+        $komentarBaru->email = $request->input('email');
+        $komentarBaru->nama_user = $request->input('nama_user');
+        $komentarBaru->isi_komentar = $request->input('isi_komentar');
+        
+        $komentarBaru->save();
+        return redirect()->back()->with('status','berhasil komentar');
+    }
+
     
+
 }
