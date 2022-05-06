@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Komentar;
 
 class PostController extends Controller
 {
+    //fungsi kontrol postingan
     public function posting()
     {
         return view('tambah-post');
@@ -60,4 +62,7 @@ class PostController extends Controller
         $postingan->delete();
         return redirect()->back()->with('status','Berhasil menghapus postingan');
     }
+
+    //fungsi komentar pada postingan
+    
 }
