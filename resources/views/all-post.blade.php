@@ -53,7 +53,7 @@
                 <!-- Grid column -->
                 <div class="col-md-6 mt-md-0 mt-3">
                     <!-- Content -->
-                    <h5 class="text-uppercase">Footer Content</h5>
+                    <h5 class="text-uppercase">Konten Footer</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, consectetur?</p>
                 </div>
                 <!-- Grid column -->
