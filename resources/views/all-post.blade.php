@@ -64,10 +64,10 @@
                     <h5 class="text-uppercase">Bantuan</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="#!">Tentang Kami</a>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <a href="#!">Hubungi Kami</a>
                         </li>
                         <li>
                             <a href="#!">Link 3</a>
